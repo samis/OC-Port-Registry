@@ -17,6 +17,7 @@
 # under the License.
 
 import sys
+import os
 from cyclone.bottle import run, route
 
 
@@ -24,4 +25,4 @@ from cyclone.bottle import run, route
 def index(web):
     web.write("Hello, world")
 
-run(host="127.0.0.1", port=5000, log=sys.stdout)
+run(host="127.0.0.1", port=os.environ['PORT'], log=sys.stdout)
