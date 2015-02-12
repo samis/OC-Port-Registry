@@ -25,4 +25,4 @@ from cyclone.bottle import run, route
 def index(web):
     web.write("Hello, world")
 
-run(host="127.0.0.1", port=int(os.environ['PORT']), log=sys.stdout)
+run(host="0.0.0.0", port=int(os.environ['PORT']), log=sys.stdout)
