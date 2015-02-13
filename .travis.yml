@@ -2,5 +2,12 @@ language: python
 python:
 - '2.7'
 script:
-  - pip install flake8
-  - flake8 .
+- pip install flake8
+- flake8 .
+deploy:
+  provider: heroku
+  api_key:
+    secure: dYPRhVLC+j3E2TRloFgFKHZSGj2IBgWImnIqjg4vUFdbP9NL9EHs+DSxrcJwqSI/P99RnIc/HlXn7LPkZ4jDZjxrUacrrr6CycWoW8tMkLVOYjaNw9PKmyDvYqIUdKZjV0X3eNF1Ni1p+MkNlfB+CtCa48ABaFSyqOzAsg4tMNY=
+  app: ocportregistry
+  on:
+    repo: samis/OC-Port-Registry

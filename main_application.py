@@ -23,8 +23,17 @@ from cyclone.bottle import run, route
 """This file contains the main application code for this web application"""
 
 
+def add_fork_ribbon(web):
+    web.write("<link rel=\"stylesheet\" href=\"//cdnjs.buttflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css\" />")
+    web.write("<div class=\"github-fork-ribbon-wrapper right\">\
+        <div class=\"github-fork-ribbon\">\
+            <a href=\"https://github.com/simonwhitaker/github-fork-ribbon-css\">Fork me on GitHub</a>\
+        </div>\
+    </div>")
+
 @route("/")
 def index(web):
-    web.write("Hello, world")
+    add_fork_ribbon(web)
+    web.write("<p>Hello, world</p>")
 
 run(host="0.0.0.0", port=int(os.environ['PORT']), log=sys.stdout)
