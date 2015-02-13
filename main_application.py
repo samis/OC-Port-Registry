@@ -20,6 +20,7 @@ import sys
 import os
 from cyclone.bottle import run, route
 
+"""This file contains the main application code for this web application"""
 
 @route("/")
 def index(web):
